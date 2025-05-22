@@ -239,6 +239,7 @@ func (ra *memoryResourceAdvisor) update() error {
 
 	var errs []error
 	for _, plugin := range ra.plugins {
+		general.Infof("[ddjia] plugin length: %d", len(ra.plugins))
 		rErr := plugin.Reconcile(&memoryPressureStatus)
 		errs = append(errs, rErr)
 	}

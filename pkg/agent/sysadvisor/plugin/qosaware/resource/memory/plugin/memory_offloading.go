@@ -455,6 +455,7 @@ func NewTransparentMemoryOffloading(conf *config.Configuration, extraConfig inte
 }
 
 func (tmo *transparentMemoryOffloading) Reconcile(status *types.MemoryPressureStatus) error {
+	general.Infof("[ddjia] reconcile tmo")
 	if tmo.conf.GetDynamicConfiguration().BlockConfig != nil {
 		RegisterTMOBlockFunc(FromDynamicConfigTMOBlockFnName, TMOBlockFnFromDynamicConfig)
 	}
