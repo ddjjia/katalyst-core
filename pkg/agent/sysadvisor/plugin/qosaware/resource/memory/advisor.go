@@ -127,7 +127,7 @@ func NewMemoryResourceAdvisor(conf *config.Configuration, extraConf interface{},
 			klog.Errorf("failed to find registered initializer %v", memadvisorPluginName)
 			continue
 		}
-		general.InfoS("add new memory advisor policy", "policyName", memadvisorPluginName)
+		general.InfoS("ddjia add new memory advisor policy", "policyName", memadvisorPluginName)
 		ra.plugins = append(ra.plugins, initFunc(conf, extraConf, metaCache, metaServer, emitter))
 	}
 
