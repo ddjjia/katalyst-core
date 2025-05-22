@@ -186,6 +186,7 @@ func (ra *memoryResourceAdvisor) sendAdvices() error {
 }
 
 func (ra *memoryResourceAdvisor) doUpdate() {
+	general.Infof("[ddjia] memoryResourceAdvisor update")
 	err := ra.update()
 	defer func() {
 		_ = general.UpdateHealthzStateByError(memoryHealthCheckName, err)
@@ -197,6 +198,7 @@ func (ra *memoryResourceAdvisor) doUpdate() {
 }
 
 func (ra *memoryResourceAdvisor) update() error {
+	general.Infof("[ddjia] memoryResourceAdvisor update")
 	ra.mutex.Lock()
 	defer ra.mutex.Unlock()
 
